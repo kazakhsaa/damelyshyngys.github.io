@@ -1,1 +1,1 @@
-https://kazakhsaa.github.io/damelyshyngys.github.io/
+DEMO: https://kazakhsaa.github.io/damelyshyngys.github.io/
