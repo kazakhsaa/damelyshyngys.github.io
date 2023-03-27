@@ -1,0 +1,316 @@
+// Start Variables
+@import "./variables";
+
+// Start mixins
+@import "./mixins";
+
+// Start classes
+@import "./classes";
+
+// start components
+@import "./components";
+
+// Start Global rules
+@import "./global_rules";
+
+// start animations
+@import "./animations";
+
+// Start Sections
+
+.navbar {
+  .navbar-brand {
+    color: $main-color;
+  }
+  .collapse {
+    .navbar-nav {
+      .nav-link:hover,
+      .nav-link.active {
+        color: $main-color !important;
+      }
+    }
+  }
+}
+
+.landing {
+  @include section-padding();
+  background-color: $main-color;
+}
+
+.features {
+  @include section-padding();
+  .item {
+    cursor: pointer;
+    transition: $main-transition;
+    svg {
+      color: $main-color;
+    }
+  }
+}
+
+.about-us {
+  @include section-padding();
+  // .main-heading {
+  //   span {
+  //     &::before {
+  //       display: none;
+  //     }
+  //   }
+  // }
+  .content {
+    .item {
+      height: calc(100% / 3);
+      &:last-of-type {
+        border-bottom: 1px solid #dee2e6;
+      }
+      &::before {
+        @include before-icon("\f00c");
+      }
+    }
+  }
+}
+
+.popular-classes {
+  @include section-padding();
+  .class {
+    h2 {
+      color: $dark-color;
+    }
+    .list {
+      width: 80%;
+      margin: auto;
+      .item {
+        span {
+          flex-basis: 50%;
+          &:first-child {
+            border-inline-end: 1px solid #ddd;
+          }
+        }
+      }
+    }
+  }
+}
+
+.book-seat {
+  @include section-padding();
+  .content {
+    li::before {
+      @include before-icon("\f00c");
+      color: green;
+    }
+  }
+  form {
+    background-color: $main-color;
+    h2 {
+      background-color: $dark-color;
+    }
+  }
+}
+
+.our-teachers {
+  @include section-padding();
+  .item {
+    .image {
+      .overlay {
+        opacity: 0;
+        transition: $main-transition;
+        background: rgba($main-color, 0.6);
+        svg {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          transition: $main-transition;
+          &:hover {
+            background-color: #fff;
+            color: #000 !important;
+          }
+        }
+      }
+    }
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.testimonial {
+  .swiper {
+    .swiper-slide {
+      p {
+        text-indent: 2rem;
+        &::before {
+          @include before-icon("\f10d");
+          top: 2rem;
+          inset-inline-start: -10px;
+          font-size: 2rem;
+          color: $main-color;
+        }
+      }
+      img {
+        width: 70px;
+      }
+      .name {
+        color: $dark-color;
+      }
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+    }
+  }
+}
+
+.articles {
+  @include section-padding();
+  .pagination {
+    .page-item.active a {
+      background-color: $main-color !important;
+      border-color: $main-color;
+    }
+  }
+}
+
+footer {
+  .row {
+    @include section-padding();
+  }
+  background-color: $dark-color;
+  ul {
+    li {
+      svg {
+        width: 1rem !important;
+        height: 1rem !important;
+        transition: $main-transition;
+        &:hover {
+          background-color: $second-color;
+        }
+      }
+    }
+  }
+  .title {
+    color: $second-color;
+  }
+  .icon {
+    color: $second-color;
+  }
+  .links {
+    a {
+      transition: $main-transition;
+      &:hover {
+        color: $second-color !important;
+        margin-inline-start: 10px;
+      }
+      &::after {
+        @include before-icon("\f105");
+        [dir="rtl"] & {
+          content: "\f104";
+        }
+      }
+    }
+  }
+  form {
+    input[type="submit"] {
+      background-color: $main-color;
+      transition: $main-transition;
+      &:hover {
+        background-color: $second-color;
+      }
+    }
+  }
+  .copy-right {
+    padding-block: $section-padding / 2;
+    span {
+      color: $second-color;
+    }
+  }
+}
+
+.gallery {
+  @include section-padding();
+  .btn-group {
+    .btn {
+      border-color: $main-color;
+      color: $main-color;
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+    input:checked + .btn {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+  .item {
+    .overlay {
+      width: 70%;
+      height: 70%;
+      background-color: $main-color;
+      cursor: pointer;
+      opacity: 0;
+      transition: $main-transition;
+    }
+    &:hover {
+      .overlay {
+        opacity: 0.8;
+      }
+    }
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: block;
+      animation: show_item 1s;
+    }
+  }
+  .modal {
+    .btn-close {
+      margin-inline-start: auto;
+    }
+  }
+}
+
+.contact-us {
+  @include section-padding();
+  textarea {
+    height: 200px;
+  }
+  svg {
+    background-color: $main-color;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.breadcrumb-section {
+  background-color: $main-color;
+  height: 50vh;
+  .breadcrumb-item {
+    + .breadcrumb-item {
+      padding: 0;
+      padding-inline-start: 0.5rem;
+    }
+    &::before {
+      color: #fff;
+      padding: 0;
+      padding-inline-end: 0.5rem;
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+  }
+}

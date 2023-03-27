@@ -1,0 +1,45 @@
+.main-heading {
+  span {
+    color: $main-color;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 2px;
+      background-color: $main-color;
+      transform: translateY(-50%);
+    }
+    &::after {
+      inset-inline-start: 100%;
+    }
+    &::before {
+      inset-inline-end: 100%;
+    }
+    &.special::before {
+      display: none;
+    }
+  }
+  h2 {
+    color: $dark-color;
+  }
+}
+
+.modal {
+  .modal-body {
+    img {
+      width: 100%;
+    }
+  }
+  &.fade {
+    .modal-dialog {
+      transform: scale(0);
+    }
+  }
+  &.show {
+    .modal-dialog {
+      transform: none;
+    }
+  }
+}

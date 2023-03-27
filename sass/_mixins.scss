@@ -1,0 +1,13 @@
+@mixin section-padding() {
+  padding-block: $section-padding;
+}
+
+@mixin before-icon($icon) {
+  font: var(--fa-font-solid);
+  content: $icon;
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
